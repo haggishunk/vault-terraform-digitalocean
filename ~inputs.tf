@@ -61,19 +61,18 @@ variable volume_fs {
   default = "ext4"
 }
 
-variable vault_tls_cert_file {
+variable vault_tls_cert {
   type = string
 }
 
-variable vault_tls_key_file {
+variable vault_tls_key {
   type = string
 }
 
-variable vault_ca_cert_file {
+variable vault_ca_cert {
   type = string
 }
 
-variable vault_hcl_config_file {
-  type    = string
-  default = "vault.hcl"
+variable vault_hcl_config {
+  type = string
 }

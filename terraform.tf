@@ -5,6 +5,8 @@ terraform {
       version = "1.22.2"
     }
   }
+
+  backend "s3" {}
 }
 
 # perhaps terraform 13 does it differently

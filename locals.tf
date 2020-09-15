@@ -27,17 +27,17 @@ locals {
   script_vault_setup = templatefile(
     "${local.dir_templates}/vault-install.sh.tpl",
     {
-      TLS_CRT   = file(var.vault_tls_cert_file)
-      TLS_KEY   = file(var.vault_tls_key_file)
-      CA_CRT    = file(var.vault_ca_cert_file)
-      VAULT_HCL = file(var.vault_hcl_config_file)
+      TLS_CRT   = var.vault_tls_cert
+      TLS_KEY   = var.vault_tls_key
+      CA_CRT    = var.vault_ca_cert
+      VAULT_HCL = var.vault_hcl_config
     },
   )
 
   script_ca_trust = templatefile(
     "${local.dir_templates}/ubuntu-ca-trust.sh.tpl",
     {
-      CA_CRT = file(var.vault_ca_cert_file)
+      CA_CRT = var.vault_ca_cert
     },
   )
 }
