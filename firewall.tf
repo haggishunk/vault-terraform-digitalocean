@@ -10,6 +10,6 @@ resource "digitalocean_firewall" "vault-in" {
   inbound_rule {
     protocol         = "tcp"
     port_range       = "8200"
-    source_addresses = ["75.0.0.0/8"]
+    source_addresses = var.source_addresses
   }
 }

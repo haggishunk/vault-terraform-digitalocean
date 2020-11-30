@@ -42,6 +42,11 @@ variable ssh_keys {
   type = list(string)
 }
 
+variable source_addresses {
+  type    = list(string)
+  default = []
+}
+
 variable domain {
   type = string
 }
