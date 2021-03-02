@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # install vault
-curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-sudo apt-get -y update && \
-    sudo apt-get -y install vault 
+apt-get -y update && \
+  apt-get -y software-properties-common curl
+curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
+apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+apt-get -y update && \
+    apt-get -y install vault 
     
 # enable mlock use by vault
 setcap cap_ipc_lock=+ep $(readlink -f $(which vault))
