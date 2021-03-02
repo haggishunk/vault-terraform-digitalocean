@@ -28,10 +28,11 @@ locals {
   script_vault_setup = templatefile(
     "${local.dir_templates}/vault-install.sh.tpl",
     {
-      TLS_CRT   = var.vault_tls_cert
-      TLS_KEY   = var.vault_tls_key
-      CA_CRT    = var.vault_ca_cert
-      VAULT_HCL = var.vault_hcl_config
+      TLS_CRT           = var.vault_tls_cert
+      TLS_KEY           = var.vault_tls_key
+      CA_CRT            = var.vault_ca_cert
+      VAULT_HCL         = var.vault_hcl_config
+      DATA_VOLUME_MOUNT = var.volume_mount
     },
   )
 

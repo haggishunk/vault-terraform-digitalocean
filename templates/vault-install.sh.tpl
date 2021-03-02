@@ -30,6 +30,9 @@ cat>/etc/vault.d/vault.hcl<<EOF
 ${VAULT_HCL}
 EOF
 
+# set perms for data volume
+chown -R vault:vault ${DATA_VOLUME_MOUNT}
+
 # run vault
 systemctl start vault
 systemctl enable vault
