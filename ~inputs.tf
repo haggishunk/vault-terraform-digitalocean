@@ -56,6 +56,11 @@ variable volume_name {
   default = "vault-data"
 }
 
+variable volume_mount {
+  type    = string
+  default = "/var/lib/vault"
+}
+
 variable volume_size {
   type    = number
   default = 10
