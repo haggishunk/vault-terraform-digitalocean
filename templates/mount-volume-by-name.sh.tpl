@@ -3,7 +3,7 @@
 MOUNT_OPTS="defaults,nofail,discard,noatime"
 
 # data volume mount point
-mkdir -p "$DATA_VOLUME_MOUNT"
+mkdir -p "${DATA_VOLUME_MOUNT}"
 
 # persistent device mapping
 cat>>/etc/fstab<<EOF
