@@ -1,5 +1,6 @@
 resource "digitalocean_firewall" "vault-in" {
-  name = "vault-inbound"
+  count = var.existing_firewall ? 0 : 1
+  name  = "vault-inbound"
 
   tags = [
     data.digitalocean_tag.app_vault.name,
