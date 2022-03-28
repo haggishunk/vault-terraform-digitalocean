@@ -33,6 +33,11 @@ variable private_networking {
   default = true
 }
 
+variable existing_firewall {
+  type    = bool
+  default = false
+}
+
 variable monitoring {
   type    = bool
   default = true
@@ -51,9 +56,19 @@ variable domain {
   type = string
 }
 
+variable existing_volume {
+  type    = bool
+  default = false
+}
+
 variable volume_name {
   type    = string
   default = "vault-data"
+}
+
+variable volume_name_regex {
+  type    = string
+  default = "^vault-data.*"
 }
 
 variable volume_mount {

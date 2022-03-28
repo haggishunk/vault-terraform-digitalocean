@@ -13,7 +13,7 @@ locals {
   )
 
   # stack specific defs
-  vault_server_host = "vault.${var.domain}"
+  vault_server_host = "${var.name}.${var.domain}"
   vault_server_url  = "http://${local.vault_server_host}"
 
 
