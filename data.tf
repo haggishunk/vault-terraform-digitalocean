@@ -1,15 +1,3 @@
-data "digitalocean_tag" "role_secrets" {
-  name = "role:secrets"
-}
-
-data "digitalocean_tag" "app_vault" {
-  name = "app:vault"
-}
-
-data "digitalocean_tag" "ssh_true" {
-  name = "ssh:true"
-}
-
 data "digitalocean_domain" "this" {
   name = var.domain
 }
