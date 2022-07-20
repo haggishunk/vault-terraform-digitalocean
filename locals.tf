@@ -5,12 +5,18 @@ locals {
 
   module_tags = [
     "project:${var.project_name}",
+    "name:${var.name}",
+    "managed_by:terraform",
   ]
 
   tags = concat(
     local.module_tags,
     var.tags,
   )
+
+  # remember max number of 5 tags ... keep them simple and sensibly scoped
+  # use the `access:` tag key
+  firewall_tags = ["access:${var.name}"]
 
   # stack specific defs
   vault_server_host = "${var.name}.${var.domain}"
