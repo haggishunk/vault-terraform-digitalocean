@@ -16,7 +16,7 @@ locals {
 
   # remember max number of 5 tags ... keep them simple and sensibly scoped
   # use the `access:` tag key
-  firewall_tags = ["access:${var.name}"]
+  firewall_source_tags = ["access:${var.name}"]
 
   # stack specific defs
   vault_server_host = "${var.name}.${var.domain}"

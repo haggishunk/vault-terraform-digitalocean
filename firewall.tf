@@ -3,11 +3,11 @@ resource "digitalocean_firewall" "vault-in" {
   name  = "vault-inbound"
 
   droplet_ids = [digitalocean_droplet.vault.id]
-  tags        = local.firewall_tags
 
   inbound_rule {
     protocol         = "tcp"
     port_range       = "8200"
     source_addresses = var.source_addresses
+    source_tags      = local.firewall_source_tags
   }
 }
